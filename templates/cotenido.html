@@ -1,0 +1,28 @@
+<main class="mt-4">
+  <div class="container">
+     <form action="/upload" method="post" enctype="multipart/form-data">
+<div class="input-group">
+
+  <input type="file" id="image" name="file" accept=".jpg, .jpeg, .png" class="form-control"  aria-describedby="upload-btn">
+  <button class="btn btn-primary" type="submit">Enviar</button>
+</div>
+
+
+
+    </form>
+
+
+
+<div class="container mt-4">
+
+    {% if base64_image %}
+    <img src="data:image/png;base64,{{ base64_image }}" alt="Imagen en escala de grises">
+    {% endif %}
+
+          {% if resultado %}
+             <h4>Placa del Vehiculo:  {{ resultado }}</h4>
+          {% endif %}
+
+</div>
+  </div>
+</main>
